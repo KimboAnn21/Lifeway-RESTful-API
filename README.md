@@ -1,6 +1,6 @@
 LifeWay Coding Challenge for Entry Level Software Engineer. 
 
-I am giving a detailed account of my thought process, as well as the code input.  Because of my current job, my coding time I had set aside to fully complete the challenge, was more limited than I would have liked.  I need another a little bit more time to complete the 'count' portion!  But here is what I have: 
+I am giving a detailed account of my thought process, as well as the code input.  Because of my current job, my coding time I had set aside to fully complete the challenge, was more limited than I would have liked.  I need a little bit more time to complete the 'count' portion!  But here is what I have: THANK YOU FOR READING! 
 
 Visual Studio Code was started. (I currently use a MacBook Air or a Dell Inspirion Touch Laptop-I am familiar with coding in both).   
 A mkdir 'lifeway' was created. 
