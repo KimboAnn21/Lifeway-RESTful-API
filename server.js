@@ -1,23 +1,34 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require("express");
+const PORT = 3000;
 
-var app = express();
-var jsonParser = bodyParser.json();
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const app = express();
 
-app.use(bodyParser.json({ type: 'application/*+json'}))
-app.use()
+app.use(express.json());
 
-//base code, will modify with 'id' and 'message'
-app.get('/', (req, res) => {
-    res.send ({text: 'total count'})
-})
+// Key will be the id, value: message
+let messages = {};
+let count = 0;
+app.post("/wordcount", (req, res) => {
+  console.log(req.body);
 
-app.post('/', function(req, res) {
-    res.send(req.body);
-})
+  if (messages[req.body.id] !== undefined) {
+    res.send(`ID: ${req.body.id} is already being used.`);
+    return;
+  }
+  
+  messages[req.body.id] = req.body.message;
 
-app.listen(3000, (err) => {
-    if(err) {throw err}
-    console.log('Server up and running on port 3000. . .')
+  const words = req.body.message.split(" ");
+  const wordCount = words.length;
+  count += wordCount;
+
+  console.log(words);
+
+  res.json({
+    count: count
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`App is running on port: ${PORT}`);
 })
